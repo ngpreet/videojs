@@ -28,6 +28,10 @@
     window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
       const args = [true, { videoSrc: './ForBiggerFun.mp4' }];
       window.flutter_inappwebview.callHandler('commEventHandler', ...args);
+
+      window.addEventListener("alertEvent", (event) => {
+        alert('Alert event called');
+      }, false);
     });
   </script>
 </body>
