@@ -29,8 +29,13 @@
       const args = [true, { videoSrc: './ForBiggerFun.mp4' }];
       window.flutter_inappwebview.callHandler('commEventHandler', ...args);
 
-      window.addEventListener("fullscreenEvent", (event) => {
-        player.isFullscreen(true);
+      window.addEventListener("playPauseEvent", (event) => {
+        if (player.paused()) {
+          player.play();
+        }
+        else {
+          player.pause();
+        }
       }, false);
     });
   </script>
