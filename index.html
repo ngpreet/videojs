@@ -4,6 +4,7 @@
     body {
       margin: 0;
     }
+
     .video-js {
       width: 100%;
       min-height: 600px;
@@ -18,9 +19,15 @@
   </video>
 
   <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
-  <script src="./videojs-landscape-fullscreen.min.js"></script>
+  <!-- <script src="./videojs-landscape-fullscreen.min.js"></script> -->
   <script>
     var player = videojs('my-video');
-    player.landscapeFullscreen();
+
+    // player.landscapeFullscreen();
+
+    window.addEventListener("commEventHandler", function (event) {
+      const args = [true, { videoSrc: './ForBiggerFun.mp4' }];
+      window.flutter_inappwebview.callHandler('myHandlerName', ...args);
+    });
   </script>
 </body>
