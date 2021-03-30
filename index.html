@@ -25,9 +25,9 @@
 
     // player.landscapeFullscreen();
 
-    window.addEventListener("commEventHandler", function (event) {
+    window.addEventListener("flutterInAppWebViewPlatformReady", function (event) {
       const args = [true, { videoSrc: './ForBiggerFun.mp4' }];
-      window.flutter_inappwebview.callHandler('myHandlerName', ...args);
+      window.flutter_inappwebview.callHandler('commEventHandler', ...args);
     });
   </script>
 </body>
