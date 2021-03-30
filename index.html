@@ -29,8 +29,8 @@
       const args = [true, { videoSrc: './ForBiggerFun.mp4' }];
       window.flutter_inappwebview.callHandler('commEventHandler', ...args);
 
-      window.addEventListener("alertEvent", (event) => {
-        alert('Alert event called');
+      window.addEventListener("fullscreenEvent", (event) => {
+        player.isFullscreen(true);
       }, false);
     });
   </script>
