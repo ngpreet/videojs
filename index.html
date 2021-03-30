@@ -1,20 +1,24 @@
 <head>
-    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+  <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+  <link href="./videojs-mobile-ui.css" rel="stylesheet" />
+  <style>
+    .video-js {
+      width: 100%;
+      min-height: 500px;
+    }
+  </style>
 </head>
-  
-  <body>
-    <video
-      id="my-video"
-      class="video-js"
-      controls
-      preload="auto"
-      width="200"
-      height="200"
-      autoplay
-      data-setup=''
-    >
-      <source src="./ForBiggerFun.mp4" type="video/mp4" />
-    </video>
-  
-    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
-  </body>
+
+<body>
+
+  <video id="my-video" class="video-js" controls preload="auto" width="100%" autoplay data-setup='{}'>
+    <source src="./ForBiggerFun.mp4" type="video/mp4" />
+  </video>
+
+  <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
+  <script src="./videojs-mobile-ui.min.js"></script>
+  <script>
+    var player = videojs('my-video');
+    player.mobileUi();
+  </script>
+</body>
